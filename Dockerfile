@@ -2,7 +2,7 @@ FROM php:5.6-apache
 
 RUN a2enmod rewrite
 
-RUN apt-get update && apt-get install -y zlib1g-dev ssmtp libpng-dev mariadb-client libxml2-dev libpng-dev libjpeg62-turbo-dev libfreetype6-dev && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y pv zlib1g-dev ssmtp libpng-dev mariadb-client libxml2-dev libpng-dev libjpeg62-turbo-dev libfreetype6-dev && rm -rf /var/lib/apt/lists/*
 
 RUN pecl install -o -f redis-2.2.8 && rm -rf /tmp/pear && echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
 
